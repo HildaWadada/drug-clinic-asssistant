@@ -1,0 +1,51 @@
+[
+  {
+    "text": "Paracetamol (also known as Acetaminophen) is a common painkiller and fever reducer. It is used to treat mild to moderate pain such as headaches, toothaches, and muscle aches, and to reduce fever. The usual adult dose is 500mg to 1000mg every 4 to 6 hours, with a maximum of 4000mg per day. Always read the label. Do not take more than the recommended dose. Avoid alcohol while taking paracetamol.",
+    "source_file": "faqs.json",
+    "page_number": 1,
+    "chunk_index": 0,
+    "category": "medicines"
+  },
+  {
+    "text": "Amoxicillin is an antibiotic used to treat bacterial infections such as chest infections, ear infections, skin infections, and urinary tract infections. It belongs to the penicillin group of medicines. The usual adult dose is 250mg to 500mg three times a day. Always complete the full course of antibiotics even if you feel better. Do not share antibiotics with others.",
+    "source_file": "faqs.json",
+    "page_number": 1,
+    "chunk_index": 1,
+    "category": "medicines"
+  },
+  {
+    "text": "Oral Rehydration Salts (ORS) are used to prevent and treat dehydration caused by diarrhoea and vomiting. To prepare ORS, dissolve one sachet in one litre of clean water. Give small sips frequently. ORS replaces the water, salts, and sugars lost during diarrhoea. It is especially important for children and the elderly. ORS is available free of charge at all government health centres in Uganda.",
+    "source_file": "faqs.json",
+    "page_number": 1,
+    "chunk_index": 2,
+    "category": "medicines"
+  },
+  {
+    "text": "Malaria is treated in Uganda using Artemisinin-based Combination Therapy (ACT). The recommended first-line treatment for uncomplicated malaria is Artemether-Lumefantrine (Coartem). The dose depends on body weight. Treatment lasts 3 days. Always complete the full course. For severe malaria, intravenous Artesunate is used in hospital. Malaria testing using a Rapid Diagnostic Test (RDT) should be done before treatment.",
+    "source_file": "faqs.json",
+    "page_number": 1,
+    "chunk_index": 3,
+    "category": "malaria"
+  },
+  {
+    "text": "Metformin is a medicine used to treat type 2 diabetes. It works by lowering blood sugar levels. The usual starting dose is 500mg twice a day with meals. The dose may be increased by your doctor. Common side effects include nausea and stomach upset, which usually improve after a few weeks. Do not take Metformin if you have kidney disease. Regular blood sugar monitoring is important.",
+    "source_file": "faqs.json",
+    "page_number": 1,
+    "chunk_index": 4,
+    "category": "medicines"
+  },
+  {
+    "text": "Folic acid supplements are recommended for all women who are planning to become pregnant or are in the first 12 weeks of pregnancy. Taking folic acid reduces the risk of neural tube defects in the baby. The recommended dose is 400 micrograms (0.4mg) daily. Folic acid is available free of charge at all antenatal clinics in Uganda.",
+    "source_file": "faqs.json",
+    "page_number": 1,
+    "chunk_index": 5,
+    "category": "maternal"
+  },
+  {
+    "text": "HIV (Human Immunodeficiency Virus) is treated with Antiretroviral Therapy (ART). In Uganda, ART is available free of charge at all government hospitals and health centres through the Ministry of Health program. People living with HIV should start treatment as soon as possible after diagnosis. Common first-line ART regimens include Tenofovir, Lamivudine, and Dolutegravir (TLD). Regular viral load monitoring is important.",
+    "source_file": "faqs.json",
+    "page_number": 1,
+    "chunk_index": 6,
+    "category": "hiv"
+  }
+]

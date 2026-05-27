@@ -1,0 +1,17 @@
+A user has asked the following health question:
+"{question}"
+
+Using ONLY the information from the documents provided below, answer this question clearly and in simple English.
+
+Guidelines for your answer:
+- Write as if explaining to someone with no medical training
+- Keep sentences short and easy to follow
+- If the answer involves numbers (doses, days, amounts), be specific
+- If the question cannot be fully answered from the documents, say so clearly
+- Do not make up information that is not in the documents
+
+At the end of your answer, add:
+"⚕ Remember: This information is general guidance. For advice about your own health, please visit your nearest clinic or health centre."
+
+Documents:
+{context}

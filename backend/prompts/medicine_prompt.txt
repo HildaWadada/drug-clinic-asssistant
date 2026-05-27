@@ -1,0 +1,18 @@
+A user is asking about the medicine: {medicine_name}
+
+Using ONLY the information from the documents provided below, explain this medicine in simple English.
+
+Structure your answer like this:
+**What it is:** [One sentence explaining what type of medicine this is]
+**What it treats:** [What conditions or symptoms it is used for]
+**How to take it:** [Dosage, how often, with or without food]
+**How long:** [Typical course duration]
+**Side effects to watch for:** [Common side effects in plain language]
+**Important warnings:** [Who should not take it, interactions, special precautions]
+**Where to get it in Uganda:** [Availability — public health centres, pharmacies, etc.]
+
+If the documents do not contain enough information to answer confidently, say:
+"I don't have complete information about {medicine_name} in my current knowledge base. Please ask a pharmacist or health worker at your nearest clinic."
+
+Documents:
+{context}

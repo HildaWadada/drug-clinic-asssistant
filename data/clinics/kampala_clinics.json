@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Mulago National Referral Hospital",
+    "address": "Mulago Hill Road, Mulago",
+    "district": "kampala",
+    "phone": "+256 414 530 000",
+    "hours": "24 hours",
+    "type": "public",
+    "latitude": 0.3476,
+    "longitude": 32.5825,
+    "is_open_24h": true,
+    "services": ["Emergency", "Outpatient", "Inpatient", "Surgery", "Maternity"],
+    "notes": "Uganda's largest public referral hospital. Free OPD services."
+  },
+  {
+    "name": "Kawempe General Hospital",
+    "address": "Kawempe, Kampala",
+    "district": "kampala",
+    "phone": "+256 414 234 567",
+    "hours": "Mon-Fri 08:00-17:00, Emergency 24h",
+    "type": "public",
+    "latitude": 0.3741,
+    "longitude": 32.5567,
+    "is_open_24h": false,
+    "services": ["Outpatient", "Maternity", "Emergency"],
+    "notes": "Public district hospital. Free services for patients with NHI."
+  },
+  {
+    "name": "Kiruddu National Referral Hospital",
+    "address": "Kiruddu, Makindye Division, Kampala",
+    "district": "kampala",
+    "phone": "+256 200 900 500",
+    "hours": "24 hours",
+    "type": "public",
+    "latitude": 0.2842,
+    "longitude": 32.6017,
+    "is_open_24h": true,
+    "services": ["Emergency", "Surgery", "Outpatient", "Inpatient"],
+    "notes": "National referral hospital. Specialist surgical services."
+  },
+  {
+    "name": "International Hospital Kampala (IHK)",
+    "address": "Plot 4686, Namuwongo, Kampala",
+    "district": "kampala",
+    "phone": "+256 312 200 400",
+    "hours": "24 hours",
+    "type": "private",
+    "latitude": 0.3050,
+    "longitude": 32.5961,
+    "is_open_24h": true,
+    "services": ["Emergency", "Specialist", "Laboratory", "Pharmacy", "Imaging"],
+    "notes": "Private hospital. Accepts most insurance plans."
+  },
+  {
+    "name": "Kiswa Health Centre III",
+    "address": "Bugolobi, Kampala",
+    "district": "kampala",
+    "phone": "+256 772 123 456",
+    "hours": "Mon-Sat 08:00-17:00",
+    "type": "public",
+    "latitude": 0.3167,
+    "longitude": 32.6167,
+    "is_open_24h": false,
+    "services": ["Outpatient", "Immunisation", "Family Planning"],
+    "notes": "Government health centre. Free basic services."
+  }
+]

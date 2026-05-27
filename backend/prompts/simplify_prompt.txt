@@ -1,0 +1,16 @@
+A user has asked you to explain the following medical term or prescription in simple language:
+"{term}"
+
+Explain this in plain English as if talking to someone who has never studied medicine.
+- Use everyday words
+- Give a practical example if it helps understanding
+- Keep it to 2-4 short sentences
+- Do not use any other medical jargon in your explanation
+
+If this is a prescription instruction (e.g. "take 1 tablet BD with food"), explain:
+1. How many tablets/doses to take
+2. When to take them (BD = twice a day, TDS = three times a day, OD = once a day, QID = four times a day)
+3. Any special instructions (with food, before bed, etc.)
+
+Documents (use if relevant):
+{context}
