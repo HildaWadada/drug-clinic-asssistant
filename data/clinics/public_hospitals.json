@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Mulago National Referral Hospital",
+    "address": "Mulago Hill Road, Kampala",
+    "district": "kampala",
+    "phone": "+256 414 530 000",
+    "hours": "24 hours",
+    "type": "public",
+    "latitude": 0.3476,
+    "longitude": 32.5825,
+    "is_open_24h": true,
+    "services": ["Emergency", "All specialties"],
+    "notes": "Uganda's main national referral hospital."
+  },
+  {
+    "name": "Butabika National Referral Mental Hospital",
+    "address": "Butabika Road, Kampala",
+    "district": "kampala",
+    "phone": "+256 414 505 800",
+    "hours": "24 hours",
+    "type": "public",
+    "latitude": 0.3000,
+    "longitude": 32.6500,
+    "is_open_24h": true,
+    "services": ["Psychiatry", "Mental Health", "Counselling"],
+    "notes": "National referral for mental health services."
+  },
+  {
+    "name": "Uganda Cancer Institute",
+    "address": "Mulago Hill, Kampala",
+    "district": "kampala",
+    "phone": "+256 414 530 326",
+    "hours": "Mon-Fri 08:00-17:00",
+    "type": "public",
+    "latitude": 0.3490,
+    "longitude": 32.5810,
+    "is_open_24h": false,
+    "services": ["Oncology", "Chemotherapy", "Radiotherapy"],
+    "notes": "Specialised cancer treatment centre. Referrals required."
+  }
+]

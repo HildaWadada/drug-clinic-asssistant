@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Kampala Pharmacy",
+    "address": "Kampala Road, Kampala CBD",
+    "district": "kampala",
+    "phone": "+256 414 230 100",
+    "hours": "Mon-Sat 08:00-20:00, Sun 09:00-17:00",
+    "type": "private",
+    "latitude": 0.3163,
+    "longitude": 32.5822,
+    "is_open_24h": false,
+    "services": ["Prescription dispensing", "OTC medicines", "Health advice"],
+    "notes": "Licensed pharmacy. Stocks Uganda MoH essential medicines list."
+  },
+  {
+    "name": "Zarukoro Pharmacy — Nakasero",
+    "address": "Nakasero Road, Kampala",
+    "district": "kampala",
+    "phone": "+256 312 281 100",
+    "hours": "Mon-Sat 08:00-21:00",
+    "type": "private",
+    "latitude": 0.3272,
+    "longitude": 32.5717,
+    "is_open_24h": false,
+    "services": ["Prescription dispensing", "OTC medicines", "Blood pressure monitoring"],
+    "notes": "Well-stocked private pharmacy."
+  },
+  {
+    "name": "National Medical Stores — Entebbe",
+    "address": "Entebbe Road, Entebbe",
+    "district": "wakiso",
+    "phone": "+256 414 320 400",
+    "hours": "Mon-Fri 08:00-17:00",
+    "type": "public",
+    "latitude": 0.0617,
+    "longitude": 32.4553,
+    "is_open_24h": false,
+    "services": ["Government medicine supply", "Essential medicines"],
+    "notes": "Supplies public health facilities. Not a retail pharmacy."
+  }
+]
