@@ -2,16 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --brand-500: #1D9E75;
-}
-
-/* Smooth scrolling across the app */
 html {
   scroll-behavior: smooth;
 }
 
-/* Prevent layout shift on scrollbar appear/disappear */
 body {
   overflow-y: scroll;
 }

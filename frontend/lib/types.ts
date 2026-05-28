@@ -1,10 +1,6 @@
 /**
- * types.ts
- * ─────────────────────────────────────────────────────────
- * Shared TypeScript types for the frontend.
+ * types.ts — Shared TypeScript types for the frontend.
  * These MUST match the Pydantic models in backend/models/.
- * When backend/models change, update these too.
- * ─────────────────────────────────────────────────────────
  */
 
 // ── Chat ─────────────────────────────────────────────────
@@ -29,6 +25,20 @@ export interface ChatResponse {
   medicine_name: string | null;
 }
 
+// ── Chat message (UI state) ───────────────────────────────
+
+export interface ChatMessage {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  sources?: SourceDocument[];
+  medicine_name?: string | null;
+  timestamp: Date;
+}
+
+// Keep Message as alias so both naming conventions work
+export type Message = ChatMessage;
+
 // ── Medicine ──────────────────────────────────────────────
 
 export interface MedicineDetail {
@@ -42,6 +52,9 @@ export interface MedicineDetail {
   availability: string;
   source: string;
 }
+
+// Alias so components/medicine/MedicineCard.tsx keeps working
+export type MedicineInfo = MedicineDetail;
 
 export interface MedicineResponse {
   found: boolean;
@@ -72,16 +85,10 @@ export interface ClinicsResponse {
   district: string | null;
 }
 
-// ── UI State ──────────────────────────────────────────────
+// Alias so lib/api.ts and lib/hooks/useClinics.ts keep working
+export type ClinicListResponse = ClinicsResponse;
 
-export interface Message {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  sources?: SourceDocument[];
-  medicine_name?: string | null;
-  timestamp: Date;
-}
+// ── API error ─────────────────────────────────────────────
 
 export interface ApiError {
   detail: string;

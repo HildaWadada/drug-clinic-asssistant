@@ -2,7 +2,7 @@
 
 import useSWR from "swr";
 import { api } from "../api";
-import type { Clinic, ClinicListResponse } from "../types";
+import type { ClinicListResponse } from "../types";
 
 interface UseClinicsOptions {
   district?: string;

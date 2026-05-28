@@ -13,7 +13,8 @@ export function MapEmbed({ clinic }: MapEmbedProps) {
     );
   }
 
-  const src = `https://maps.google.com/maps?q=${clinic.lat},${clinic.lng}&z=15&output=embed`;
+  // Use clinic.latitude and clinic.longitude (matching the Clinic type)
+  const src = `https://maps.google.com/maps?q=${clinic.latitude},${clinic.longitude}&z=15&output=embed`;
 
   return (
     <iframe
