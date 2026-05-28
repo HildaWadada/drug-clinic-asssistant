@@ -5,7 +5,6 @@ GET /api/medicine/{name} — medicine detail lookup endpoint.
 ─────────────────────────────────────────────────────────────
 """
 
-from __future__ import annotations
 
 import logging
 

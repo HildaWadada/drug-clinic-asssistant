@@ -8,7 +8,6 @@ Both the router and the frontend TypeScript types must match.
 ─────────────────────────────────────────────────────────────
 """
 
-from __future__ import annotations
 
 from pydantic import BaseModel, Field, field_validator
 

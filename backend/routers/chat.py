@@ -11,7 +11,6 @@ All business logic lives in rag_service.py.
 ─────────────────────────────────────────────────────────────
 """
 
-from __future__ import annotations
 
 import logging
 

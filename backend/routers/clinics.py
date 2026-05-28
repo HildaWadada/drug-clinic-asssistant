@@ -6,7 +6,6 @@ Supports filtering by district, type, and 24h availability.
 ─────────────────────────────────────────────────────────────
 """
 
-from __future__ import annotations
 
 import logging
 

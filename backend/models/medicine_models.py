@@ -5,7 +5,6 @@ Pydantic models for the /api/medicine/{name} endpoint.
 ─────────────────────────────────────────────────────────────
 """
 
-from __future__ import annotations
 
 from pydantic import BaseModel, Field
 
