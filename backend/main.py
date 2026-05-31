@@ -64,7 +64,7 @@ def create_app() -> FastAPI:
     log.info(
         f"HealthAssist UG API started — "
         f"environment: {settings.environment}, "
-        f"model: {settings.anthropic_model}"
+        f"model: {settings.openai_model}"
     )
 
     return app

@@ -1,11 +1,7 @@
 """
 config.py
-─────────────────────────────────────────────────────────────
 Centralised configuration loaded from environment variables.
-
-All config values live here. No other file should call
-os.getenv() directly — import from here instead.
-─────────────────────────────────────────────────────────────
+All config values live here. No other file should call os.getenv() directly.
 """
 
 from __future__ import annotations
@@ -17,20 +13,15 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    """
-    Application settings loaded from .env file.
-    Pydantic validates types automatically on startup.
-    """
-
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=False,
     )
 
-    # ── Anthropic ────────────────────────────────────────
-    anthropic_api_key: str
-    anthropic_model: str = "claude-3-5-sonnet-20241022"
+    # ── OpenAI ───────────────────────────────────────────
+    openai_api_key: str
+    openai_model: str = "gpt-4o-mini"
     max_tokens: int = 1024
 
     # ── Server ───────────────────────────────────────────
@@ -43,8 +34,8 @@ class Settings(BaseSettings):
     chroma_collection_name: str = "health_knowledge"
 
     # ── RAG retrieval ────────────────────────────────────
-    retrieval_top_k: int = 5          # Number of chunks to retrieve
-    retrieval_score_threshold: float = 0.3  # Minimum similarity score
+    retrieval_top_k: int = 5
+    retrieval_score_threshold: float = 0.3
 
     # ── Rate limiting ────────────────────────────────────
     rate_limit_per_minute: int = 30
@@ -65,7 +56,6 @@ class Settings(BaseSettings):
 
     @property
     def cors_origins_list(self) -> list[str]:
-        """Parse comma-separated CORS origins into a list."""
         return [origin.strip() for origin in self.cors_origins.split(",")]
 
     @property
@@ -75,9 +65,4 @@ class Settings(BaseSettings):
 
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
-    """
-    Return a cached Settings instance.
-    Use this everywhere instead of creating Settings() directly.
-    The lru_cache ensures .env is only read once.
-    """
     return Settings()

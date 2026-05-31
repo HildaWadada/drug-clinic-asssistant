@@ -1,15 +1,9 @@
-/**
- * page.tsx — Medicines A–Z (/medicines)
- * Browse all common medicines. Click one to see full detail.
- */
-
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { Search, Pill } from "lucide-react";
 
-// Common medicines from Uganda MoH essential medicines list
 const MEDICINES = [
   { name: "Amoxicillin", category: "Antibiotic" },
   { name: "Artemether-Lumefantrine", category: "Antimalarial" },
@@ -47,17 +41,13 @@ const MEDICINES = [
 ];
 
 const CATEGORY_COLOURS: Record<string, string> = {
-  Antibiotic: "bg-blue-50 text-blue-700",
-  Antimalarial: "bg-green-50 text-green-700",
-  "Blood pressure": "bg-red-50 text-red-700",
-  Diabetes: "bg-amber-50 text-amber-700",
-  "HIV/ARV": "bg-purple-50 text-purple-700",
-  Painkiller: "bg-gray-100 text-gray-600",
+  Antibiotic: "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300",
+  Antimalarial: "bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300",
+  "Blood pressure": "bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300",
+  Diabetes: "bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300",
+  "HIV/ARV": "bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300",
+  Painkiller: "bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300",
 };
-
-function getCategoryClass(category: string): string {
-  return CATEGORY_COLOURS[category] ?? "bg-gray-100 text-gray-600";
-}
 
 export default function MedicinesPage() {
   const [search, setSearch] = useState("");
@@ -68,21 +58,21 @@ export default function MedicinesPage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-8">
-      <h1 className="mb-1 text-xl font-semibold text-gray-900">Medicines A–Z</h1>
-      <p className="mb-5 text-sm text-gray-500">
+      <h1 className="mb-1 text-xl font-semibold text-gray-900 dark:text-white">Medicines A–Z</h1>
+      <p className="mb-5 text-sm text-gray-500 dark:text-slate-400">
         Common medicines on the Uganda MoH Essential Medicines List. Click any
         medicine to see how it works, dosage, and side effects.
       </p>
 
       {/* Search */}
-      <div className="mb-5 flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 shadow-sm">
-        <Search className="h-4 w-4 text-gray-400" />
+      <div className="mb-5 flex items-center gap-2 rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-4 py-2.5 shadow-sm">
+        <Search className="h-4 w-4 text-gray-400 dark:text-slate-500" />
         <input
           type="text"
           placeholder="Search medicines…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
+          className="flex-1 bg-transparent text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none"
         />
       </div>
 
@@ -92,15 +82,15 @@ export default function MedicinesPage() {
           <Link
             key={med.name}
             href={`/medicines/${encodeURIComponent(med.name.toLowerCase())}`}
-            className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-3 transition-colors hover:border-brand-200 hover:bg-brand-50"
+            className="flex items-center gap-3 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 transition-colors hover:border-brand-200 dark:hover:border-brand-700 hover:bg-brand-50 dark:hover:bg-brand-900/20"
           >
-            <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-brand-50">
+            <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-brand-50 dark:bg-brand-900/30">
               <Pill className="h-4 w-4 text-brand-500" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-medium text-gray-900">{med.name}</p>
+              <p className="truncate text-sm font-medium text-gray-900 dark:text-white">{med.name}</p>
             </div>
-            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${getCategoryClass(med.category)}`}>
+            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${CATEGORY_COLOURS[med.category] ?? "bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300"}`}>
               {med.category}
             </span>
           </Link>
@@ -108,7 +98,7 @@ export default function MedicinesPage() {
       </div>
 
       {filtered.length === 0 && (
-        <p className="py-8 text-center text-sm text-gray-400">
+        <p className="py-8 text-center text-sm text-gray-400 dark:text-slate-500">
           No medicines found for &quot;{search}&quot;
         </p>
       )}

@@ -1,69 +1,55 @@
 /**
  * ClinicMap.tsx
- * Google Maps embed showing the selected clinic location.
- * Requires NEXT_PUBLIC_GOOGLE_MAPS_API_KEY in .env
+ * Shows clinic location using OpenStreetMap via iframe.
+ * No API key needed — completely free.
+ * Map fills the full height of its container.
  */
 
-"use client";
-
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-import { Spinner } from "@/components/ui/Spinner";
 import type { Clinic } from "@/lib/types";
 
 interface ClinicMapProps {
   clinic: Clinic | null;
 }
 
-const MAP_CONTAINER_STYLE = { width: "100%", height: "100%", minHeight: "200px" };
-
-// Default centre: Kampala
-const DEFAULT_CENTER = { lat: 0.3163, lng: 32.5822 };
-
 export function ClinicMap({ clinic }: ClinicMapProps) {
-  const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "",
-  });
-
-  if (loadError) {
+  if (!clinic) {
     return (
-      <div className="flex h-full min-h-[200px] items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-400">
-        Map unavailable — Google Maps API key not configured.
+      <div className="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-gray-200 bg-white text-sm text-gray-400">
+        <div className="text-center">
+          <p className="text-2xl mb-2">🗺️</p>
+          <p>Select a clinic to see its location</p>
+        </div>
       </div>
     );
   }
 
-  if (!isLoaded) {
-    return (
-      <div className="flex h-full min-h-[200px] items-center justify-center rounded-xl border border-gray-200 bg-gray-50">
-        <Spinner />
-      </div>
-    );
-  }
-
-  const centre = clinic
-    ? { lat: clinic.latitude, lng: clinic.longitude }
-    : DEFAULT_CENTER;
+  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${clinic.longitude - 0.008},${clinic.latitude - 0.008},${clinic.longitude + 0.008},${clinic.latitude + 0.008}&layer=mapnik&marker=${clinic.latitude},${clinic.longitude}`;
 
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200">
-      <GoogleMap
-        mapContainerStyle={MAP_CONTAINER_STYLE}
-        center={centre}
-        zoom={clinic ? 15 : 12}
-        options={{
-          disableDefaultUI: false,
-          zoomControl: true,
-          streetViewControl: false,
-          mapTypeControl: false,
-        }}
-      >
-        {clinic && (
-          <Marker
-            position={{ lat: clinic.latitude, lng: clinic.longitude }}
-            title={clinic.name}
-          />
-        )}
-      </GoogleMap>
+    <div className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+      {/* Map header */}
+      <div className="flex flex-shrink-0 items-center justify-between border-b border-gray-100 bg-white px-3 py-2">
+        <div className="flex items-center gap-2">
+          <span className="h-2 w-2 rounded-full bg-brand-500"></span>
+          <span className="text-sm font-medium text-gray-700">{clinic.name}</span>
+        </div>
+        <a
+          href={`https://www.openstreetmap.org/?mlat=${clinic.latitude}&mlon=${clinic.longitude}&zoom=16`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-brand-600 hover:underline"
+        >
+          Open in maps ↗
+        </a>
+      </div>
+
+      {/* Map iframe fills remaining space */}
+      <iframe
+        title={`Map showing ${clinic.name}`}
+        src={src}
+        className="flex-1 w-full border-0"
+        loading="lazy"
+      />
     </div>
   );
 }

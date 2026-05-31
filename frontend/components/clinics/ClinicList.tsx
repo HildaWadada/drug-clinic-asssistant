@@ -1,8 +1,3 @@
-/**
- * ClinicList.tsx
- * Scrollable list of clinic cards with a search input.
- */
-
 "use client";
 
 import { useState } from "react";
@@ -20,13 +15,7 @@ interface ClinicListProps {
   onSelect: (clinic: Clinic) => void;
 }
 
-export function ClinicList({
-  clinics,
-  isLoading,
-  error,
-  selectedClinic,
-  onSelect,
-}: ClinicListProps) {
+export function ClinicList({ clinics, isLoading, error, selectedClinic, onSelect }: ClinicListProps) {
   const [search, setSearch] = useState("");
 
   const filtered = clinics.filter(
@@ -38,18 +27,17 @@ export function ClinicList({
   return (
     <div className="flex h-full flex-col gap-3 p-3">
       {/* Search */}
-      <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-2">
-        <Search className="h-3.5 w-3.5 text-gray-400" />
+      <div className="flex items-center gap-2 rounded-full border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 px-3 py-2">
+        <Search className="h-3.5 w-3.5 text-gray-400 dark:text-slate-500" />
         <input
           type="text"
           placeholder="Search clinics or area…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:outline-none"
+          className="flex-1 bg-transparent text-sm text-gray-800 dark:text-slate-200 placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none"
         />
       </div>
 
-      {/* States */}
       {isLoading && (
         <div className="flex items-center justify-center py-8">
           <Spinner />
@@ -59,12 +47,11 @@ export function ClinicList({
       {error && <ErrorMessage message={error} />}
 
       {!isLoading && !error && filtered.length === 0 && (
-        <p className="py-8 text-center text-sm text-gray-400">
+        <p className="py-8 text-center text-sm text-gray-400 dark:text-slate-500">
           No clinics found. Try a different search.
         </p>
       )}
 
-      {/* List */}
       <div className="flex flex-col gap-2 overflow-y-auto">
         {filtered.map((clinic) => (
           <ClinicCard

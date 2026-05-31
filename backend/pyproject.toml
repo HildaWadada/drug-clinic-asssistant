@@ -1,41 +1,56 @@
 [project]
-name = "health-assistant-backend"
+name = "health-assistant-ug"
 version = "0.1.0"
-description = "HealthAssist UG — FastAPI backend with RAG pipeline"
-requires-python = ">=3.12"
+description = "AI-powered drug and clinic information assistant for Uganda"
+requires-python = ">=3.11"
 
 dependencies = [
-    "fastapi==0.111.0",
-    "uvicorn[standard]==0.30.1",
-    "pydantic==2.7.1",
-    "pydantic-settings==2.3.1",
-    "python-dotenv==1.0.1",
-    "anthropic==0.28.0",
-    "langchain==0.2.5",
-    "langchain-anthropic==0.1.15",
-    "langchain-community==0.2.5",
-    "langchain-text-splitters==0.2.1",
-    "chromadb==0.5.3",
-    "sentence-transformers==3.0.0",
-    "pypdf2==3.0.1",
-    "pdfplumber==0.11.1",
-    "slowapi==0.1.9",
-    "httpx==0.27.0",
-    "loguru==0.7.2",
+    # ── API & Server ─────────────────────────
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "python-dotenv>=1.0.0",
+    "slowapi>=0.1.9",
+    "httpx>=0.27.0",
+
+    # ── AI & RAG ─────────────────────────────
+    "openai>=1.30.0",
+    "langchain>=0.2.0",
+    "langchain-community>=0.2.0",
+    "langchain-openai>=0.1.0",
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+
+    # ── PDF & Data Processing ─────────────────
+    "pypdf2>=3.0.0",
+    "pymupdf>=1.24.0",
+    "tiktoken>=0.7.0",
+    "pandas>=2.2.0",
 ]
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
-    "pytest==8.2.2",
-    "pytest-asyncio==0.23.7",
-    "httpx==0.27.0",
-    "ruff==0.4.8",
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.4.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.4.0",
 ]
 
 [tool.ruff]
-line-length = 100
-target-version = "py312"
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-testpaths = ["tests"]
+testpaths = ["backend/tests"]

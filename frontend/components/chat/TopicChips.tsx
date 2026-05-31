@@ -32,7 +32,7 @@ export function TopicChips({ onSelect }: TopicChipsProps) {
         <button
           key={chip.label}
           onClick={() => onSelect(chip.question)}
-          className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-left text-sm text-gray-700 transition-colors hover:border-brand-200 hover:bg-brand-50 hover:text-brand-800"
+          className="flex items-center gap-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2.5 text-left text-sm text-gray-700 dark:text-slate-300 transition-colors hover:border-brand-200 dark:hover:border-brand-600 hover:bg-brand-50 dark:hover:bg-slate-700"
         >
           <span className="text-brand-500">{chip.icon}</span>
           {chip.label}
