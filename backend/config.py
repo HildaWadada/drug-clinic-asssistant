@@ -1,13 +1,14 @@
+<<<<<<< HEAD
+=======
 """
 config.py
 Centralised configuration loaded from environment variables.
 All config values live here. No other file should call os.getenv() directly.
 """
 
+>>>>>>> 8b9dee06990c5fe3e9822538e6f8d40329751a51
 from __future__ import annotations
-
 from functools import lru_cache
-
 from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -19,31 +20,45 @@ class Settings(BaseSettings):
         case_sensitive=False,
     )
 
+<<<<<<< HEAD
+    # Anthropic (optional now)
+    anthropic_api_key: str = ""
+    anthropic_model: str = "claude-3-5-sonnet-20241022"
+=======
     # ── OpenAI ───────────────────────────────────────────
     openai_api_key: str
     openai_model: str = "gpt-4o-mini"
+>>>>>>> 8b9dee06990c5fe3e9822538e6f8d40329751a51
     max_tokens: int = 1024
 
-    # ── Server ───────────────────────────────────────────
+    # OpenAI
+    openai_api_key: str = ""
+    openai_model: str = "gpt-4o-mini"
+
+    # Server
     backend_host: str = "0.0.0.0"
     backend_port: int = 8000
     environment: str = "development"
 
-    # ── ChromaDB ─────────────────────────────────────────
+    # ChromaDB
     chroma_db_path: str = "./data/chroma_db"
     chroma_collection_name: str = "health_knowledge"
 
+<<<<<<< HEAD
+    # RAG retrieval
+=======
     # ── RAG retrieval ────────────────────────────────────
+>>>>>>> 8b9dee06990c5fe3e9822538e6f8d40329751a51
     retrieval_top_k: int = 5
     retrieval_score_threshold: float = 0.3
 
-    # ── Rate limiting ────────────────────────────────────
+    # Rate limiting
     rate_limit_per_minute: int = 30
 
-    # ── CORS ─────────────────────────────────────────────
+    # CORS
     cors_origins: str = "http://localhost:3000"
 
-    # ── Logging ──────────────────────────────────────────
+    # Logging
     log_level: str = "INFO"
 
     @field_validator("environment")
