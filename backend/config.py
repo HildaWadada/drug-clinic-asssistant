@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-=======
-"""
-config.py
-Centralised configuration loaded from environment variables.
-All config values live here. No other file should call os.getenv() directly.
-"""
-
->>>>>>> 8b9dee06990c5fe3e9822538e6f8d40329751a51
 from __future__ import annotations
 from functools import lru_cache
 from pydantic import field_validator
@@ -20,15 +11,9 @@ class Settings(BaseSettings):
         case_sensitive=False,
     )
 
-<<<<<<< HEAD
-    # Anthropic (optional now)
+    # Anthropic
     anthropic_api_key: str = ""
     anthropic_model: str = "claude-3-5-sonnet-20241022"
-=======
-    # ── OpenAI ───────────────────────────────────────────
-    openai_api_key: str
-    openai_model: str = "gpt-4o-mini"
->>>>>>> 8b9dee06990c5fe3e9822538e6f8d40329751a51
     max_tokens: int = 1024
 
     # OpenAI
@@ -44,11 +29,7 @@ class Settings(BaseSettings):
     chroma_db_path: str = "./data/chroma_db"
     chroma_collection_name: str = "health_knowledge"
 
-<<<<<<< HEAD
     # RAG retrieval
-=======
-    # ── RAG retrieval ────────────────────────────────────
->>>>>>> 8b9dee06990c5fe3e9822538e6f8d40329751a51
     retrieval_top_k: int = 5
     retrieval_score_threshold: float = 0.3
 
