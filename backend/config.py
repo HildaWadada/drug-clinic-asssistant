@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     # OpenAI
     openai_api_key: str = ""
     openai_model: str = "gpt-4o-mini"
+    serper_api_key: str = ""
 
     # Server
     backend_host: str = "0.0.0.0"
